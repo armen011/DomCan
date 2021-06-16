@@ -7,17 +7,54 @@
 }
 .registerForm {
   width: 500px;
-  height: 600px;
+  height: 500px;
   background-color: white;
   margin-top: 20px;
-  padding: 10px;
+  position: relative;
 }
 .registerForm h2 {
   font-size: 32px;
   text-align: center;
 }
+.registerForm button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 25px;
+  margin: auto;
+}
 .registerForm .inputs {
-  width: 100%;
-  height: 80%;
-  background: red;
+  width: 80%;
+  height: 400px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 19px;
+}
+.registerForm .inputs tr td {
+  position: relative;
+}
+.registerForm .inputs p {
+  font-size: 15px;
+  position: absolute;
+  top: 29px;
+  right: 0;
+}
+.registerForm .inputs input {
+  width: 200px;
+  height: 30px;
+  padding-left: 10px;
+  border: 1px solid #e4a655;
+}
+.fa-check-circle {
+  position: relative;
+  left: 190px;
+  top: 90px;
+}
+.sucP {
+  position: relative;
+  left: 40px;
+  top: 110px;
+  font-size: 20px;
 }

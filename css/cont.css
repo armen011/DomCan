@@ -1,0 +1,7 @@
+@import url("register.css");
+.main {
+  width: 100%;
+  height: 900px;
+  background-color: #eaeded;
+  padding-top: 80px;
+}

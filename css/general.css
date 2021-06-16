@@ -49,3 +49,9 @@ li {
 .close:after {
   transform: rotate(-45deg);
 }
+#error {
+  color: red;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}

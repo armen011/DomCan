@@ -1,9 +1,10 @@
 class User {
-  constructor(name, surname, email, phone) {
+  constructor(name, surname, email, phone, password) {
     this.name = name;
     this.surname = surname;
     this.email = email;
     this.phone = phone;
+    this.password = password;
     this.id = 1;
     this.addUser();
   }
@@ -15,6 +16,7 @@ class User {
         surname: this.surname,
         email: this.email,
         phone: this.phone,
+        password: this.password,
         id: users.length + 1,
       });
       localStorage.users = JSON.stringify(users);
@@ -25,16 +27,20 @@ class User {
           surname: this.surname,
           email: this.email,
           phone: this.phone,
+          password: this.password,
           id: 1,
         },
       ];
       localStorage.users = JSON.stringify(users);
     }
   }
+  static checkEmail(email) {
+    if (localStorage.users) {
+      let users = JSON.parse(localStorage.users);
+      let res = users.some((elm) => elm.email === email);
+      return !res;
+    } else {
+      return true;
+    }
+  }
 }
-let user = new User(
-  "Armen ",
-  "Mkrtchyan",
-  "armenmkrtchyan14@mail.ru",
-  "+37494215007"
-);

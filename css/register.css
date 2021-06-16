@@ -10,7 +10,6 @@
   height: 500px;
   background-color: white;
   margin-top: 20px;
-  padding: 10px;
   position: relative;
 }
 .registerForm h2 {
@@ -33,9 +32,29 @@
   margin: auto;
   font-size: 19px;
 }
+.registerForm .inputs tr td {
+  position: relative;
+}
+.registerForm .inputs p {
+  font-size: 15px;
+  position: absolute;
+  top: 29px;
+  right: 0;
+}
 .registerForm .inputs input {
   width: 200px;
   height: 30px;
   padding-left: 10px;
   border: 1px solid #e4a655;
+}
+.fa-check-circle {
+  position: relative;
+  left: 190px;
+  top: 90px;
+}
+.sucP {
+  position: relative;
+  left: 40px;
+  top: 110px;
+  font-size: 20px;
 }

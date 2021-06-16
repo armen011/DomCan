@@ -57,17 +57,3 @@
   align-items: center;
   padding: 0 20px;
 }
-.navbar button {
-  width: 80px;
-  height: 30px;
-  border-radius: 10px;
-  border: 0;
-  color: #343433;
-  background-color: #febd69;
-}
-.navbar button:hover {
-  background-color: #ffb048;
-  border: 1px solid black;
-  font-size: 15px;
-  color: white;
-}

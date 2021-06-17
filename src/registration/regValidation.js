@@ -159,6 +159,7 @@ function firstLetterUppercase(word) {
   return res;
 }
 function showMsg(div) {
+  sessionStorage.clear();
   let p = document.createElement("p");
   p.classList.add("sucP");
   p.innerText = "You have successfuly registerd.Log in to add  Items.";

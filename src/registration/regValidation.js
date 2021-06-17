@@ -172,5 +172,6 @@ function showMsg(div) {
   const SignIn = document.createElement("button");
   SignIn.innerText = "SignIn";
   SignIn.classList.add("btn");
+  SignIn.onclick = SignInForm;
   div.append(i, p, SignIn, closeBtn);
 }

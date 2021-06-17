@@ -43,4 +43,24 @@ class User {
       return true;
     }
   }
+  static LogIn(email, password) {
+    if (localStorage.users) {
+      let users = JSON.parse(localStorage.users);
+      let Check = users.filter((elm) => elm.email === email)[0];
+      if (Check.password === password) {
+        sessionStorage.id = JSON.stringify(Check.id);
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+  static getUserInfo() {
+    const users = JSON.parse(localStorage.users);
+    const userId = JSON.parse(sessionStorage.id);
+    const user = users.filter((elm) => elm.id === userId)[0];
+    return user;
+  }
 }

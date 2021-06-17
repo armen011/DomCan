@@ -2,20 +2,13 @@ function SignInForm() {
   if (sessionStorage.id) {
     profile();
   } else {
-    if (
-      !document.querySelector(".registerForm") &&
-      !document.querySelector(".signInForm")
-    ) {
+    if (!document.querySelector(".cover")) {
       const main = document.querySelector("main");
       let cover = document.createElement("div");
       cover.classList.add("cover");
       createLogForm(cover);
       main.append(cover);
-    } else if (document.querySelector(".signInForm")) {
-      let cover = document.querySelector(".cover");
-      cover.innerText = "";
-      createLogForm(cover);
-    } else if (document.querySelector(".registerForm")) {
+    } else {
       let cover = document.querySelector(".cover");
       cover.innerText = "";
       createLogForm(cover);

@@ -10,5 +10,7 @@ function run() {
   nav.classList.add("navbar");
   importNav(nav);
   header.append(logo, search, nav);
+  let main = document.querySelector(".main");
+  showItems(main);
 }
 run();

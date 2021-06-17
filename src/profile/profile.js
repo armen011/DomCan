@@ -1,18 +1,11 @@
 function profile() {
-  if (
-    !document.querySelector(".registerForm") &&
-    !document.querySelector(".signInForm")
-  ) {
+  if (!document.querySelector(".cover")) {
     const main = document.querySelector("main");
     let cover = document.createElement("div");
     cover.classList.add("cover");
     createProfile(cover);
     main.append(cover);
-  } else if (document.querySelector(".signInForm")) {
-    let cover = document.querySelector(".cover");
-    cover.innerText = "";
-    createProfile(cover);
-  } else if (document.querySelector(".registerForm")) {
+  } else {
     let cover = document.querySelector(".cover");
     cover.innerText = "";
     createProfile(cover);
@@ -263,7 +256,6 @@ function validatePrice(price) {
   return re.test(String(price).toLowerCase());
 }
 function addUserItems(div) {
-  console.log(Item.getItems("unique"));
   if (Item.getItems("unique")) {
     let items = Item.getItems("unique");
     items.map((elm) => {
@@ -276,6 +268,7 @@ function addUserItems(div) {
       imgDiv.append(img);
       let title = document.createElement("p");
       title.innerText = "Title` " + elm.title;
+      title.className = "showTitle";
       let price = document.createElement("p");
       price.innerText = "Price" + elm.price;
       let qnt = document.createElement("p");
@@ -284,5 +277,12 @@ function addUserItems(div) {
       div.append(item);
     });
   } else {
+    let empty = document.createElement("p");
+    empty.style.color = "white";
+    empty.style.fontSize = "35px";
+    empty.style.marginLeft = "270px";
+
+    empty.innerText = "Empty";
+    div.append(empty);
   }
 }

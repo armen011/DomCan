@@ -1,18 +1,11 @@
 function RegisterForm() {
-  if (
-    !document.querySelector(".registerForm") &&
-    !document.querySelector(".signInForm")
-  ) {
+  if (!document.querySelector(".cover")) {
     const main = document.querySelector("main");
     let cover = document.createElement("div");
     cover.classList.add("cover");
     createRegForm(cover);
     main.append(cover);
-  } else if (document.querySelector(".signInForm")) {
-    let cover = document.querySelector(".cover");
-    cover.innerText = "";
-    createRegForm(cover);
-  } else if (document.querySelector(".registerForm")) {
+  } else {
     let cover = document.querySelector(".cover");
     cover.innerText = "";
     createRegForm(cover);

@@ -32,9 +32,4 @@ class User {
     }
   }
 }
-let user = new User(
-  "Armen ",
-  "Mkrtchyan",
-  "armenmkrtchyan14@mail.ru",
-  "+37494215007"
-);
+

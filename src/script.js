@@ -10,6 +10,7 @@ function run() {
   nav.classList.add("navbar");
   importNav(nav);
   header.append(logo, search, nav);
+  importFooter();
 }
 const importLogo = (div) => {
   let h1 = (document.createElement("h1").innerHTML = "HealthyFood");
@@ -81,4 +82,112 @@ function regInputs(div) {
   passwordLab.append(passwordInp);
   div.append(nameLab, surnameLab, emailLab, phoneLab, passwordLab);
 }
+
+const importFooter = () => {
+  const footer = document.querySelector(".footer");
+  const icons = document.createElement("div");
+  const copyWrite = document.createElement("div");
+  icons.classList.add("icons");
+  copyWrite.classList.add("copyWrite");
+
+  // const ul = document.createElement("ul");
+  // const li = document.createElement("li");
+  // const li1 = document.createElement("li");
+  // const li2 = document.createElement("li");
+  // const li3 = document.createElement("li");
+  // ul.classList.add("ul");
+  // li.innerText = "Yerevan";
+  // li1.innerText = "yerevan.@gmail.com";
+  // li2.innerText = "+555 555 555";
+  // li3.innerText = "© 2021";
+
+  // ul.append(li, li1, li2, li3, ic1);
+
+  const firstDiv = document.createElement("div");
+  const secondDiv = document.createElement("div");
+  const thirdDiv = document.createElement("div");
+  const fourthDiv = document.createElement("div");
+
+  const ic1 = document.createElement("icon");
+  ic1.classList.add("mapClass");
+  ic1.classList.add("fa");
+  ic1.classList.add("fa-map-marker");
+  ic1.classList.add("fa-3x");
+  const mapText = document.createElement("p");
+  mapText.classList.add("mapText");
+  mapText.innerText = "Yerevan,Armenia";
+  firstDiv.append(ic1, mapText);
+  firstDiv.classList.add("first");
+  copyWrite.append(firstDiv);
+
+  // const icFirst = document.createElement("icon");
+  // icFirst.classList.add("icFirst");
+  // mapClass.append("mapText");
+  // copyWrite.append("mapClass")
+
+  const ic2 = document.createElement("icon");
+  ic2.classList.add("mapClass");
+  ic2.classList.add("fa");
+  ic2.classList.add("fa-paper-plane");
+  ic2.classList.add("fa-3x");
+  const message = document.createElement("p");
+  message.classList.add("message");
+  message.innerText = "yerevan@gmail.com";
+  secondDiv.append(ic2, message);
+  secondDiv.classList.add("second");
+  copyWrite.append(secondDiv);
+
+  const ic3 = document.createElement("icon");
+  ic3.classList.add("mapClass");
+  ic3.classList.add("fa");
+  ic3.classList.add("rotate-icon");
+  ic3.classList.add("fa-phone");
+  ic3.classList.add("fa-3x");
+  const call = document.createElement("p");
+  call.classList.add("call");
+  call.innerText = "+374 10 11 11 11";
+  thirdDiv.append(ic3, call);
+  thirdDiv.classList.add("third");
+  copyWrite.append(thirdDiv);
+
+  const ic4 = document.createElement("icon");
+  ic4.classList.add("mapClass")
+  ic4.classList.add("copy");
+  ic4.classList.add("fa");
+  ic4.classList.add("fa-copyright");
+  ic4.classList.add("fa-3x");
+  const copy = document.createElement("p");
+  copy.classList.add("copyText");
+  copy.innerText = "copyWrite 2021";
+  fourthDiv.append(ic4, copy);
+  fourthDiv.classList.add("fourth");
+  copyWrite.append(fourthDiv);
+
+  const icon1 = document.createElement("icon");
+  icon1.classList.add("fa");
+  icon1.classList.add("fa-facebook");
+  icon1.classList.add("fa-3x");
+  icons.append(icon1);
+
+  const icon2 = document.createElement("icon");
+  icon2.classList.add("fa");
+  icon2.classList.add("fa-youtube");
+  icon2.classList.add("fa-3x");
+  icons.append(icon2);
+
+  const icon3 = document.createElement("icon");
+  icon3.classList.add("fa");
+  icon3.classList.add("fa-instagram");
+  icon3.classList.add("fa-3x");
+  icons.append(icon3);
+
+  const icon4 = document.createElement("icon");
+  icon4.classList.add("fa");
+  icon4.classList.add("fa-twitter");
+  icon4.classList.add("fa-3x");
+  icons.append(icon4);
+
+  // copyWrite.append(ul);
+  footer.append(copyWrite, icons);
+};
 run();

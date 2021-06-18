@@ -1,0 +1,161 @@
+*body {
+  font-family: "Benne", serif;
+  font-family: "Lora", serif;
+}
+.footer {
+  width: 100%;
+  height: 200px;
+
+  display: flex;
+}
+.icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(209, 198, 101);
+}
+.copyWrite {
+  display: flex;
+
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(209, 198, 101);
+  width: 50%;
+  height: 100%;
+}
+.ul {
+  padding-left: 10%;
+  margin-top: 2%;
+  justify-content: center;
+}
+ul > li {
+  font-size: 150%;
+  padding-bottom: 2%;
+}
+
+.rotate-icon {
+  transform: scaleX(-1);
+}
+
+.copyWrite::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100px;
+  background-color: rgb(109, 73, 7);
+  left: 50%;
+}
+
+.mapText {
+  margin-left: -42.5px;
+  opacity: 0;
+  transform: scaleX(-1);
+  transition-duration: 2s;
+}
+
+.mapClass {
+  margin-top: 24px;
+  transition-duration: 2s;
+}
+
+.first {
+  margin-right: 42.5px;
+}
+.first:hover .mapText {
+  opacity: 1;
+}
+
+.first:hover .mapClass {
+  transform: scaleX(-1);
+  opacity: 0;
+}
+
+.first:hover .mapText {
+  transform: scaleX(1);
+}
+
+.message {
+  margin-left: -42.5px;
+  opacity: 0;
+  transform: scaleX(-1);
+  transition-duration: 2s;
+}
+
+.mapClass {
+  transition-duration: 2s;
+}
+
+.second {
+  margin-right: 42.5px;
+}
+.second:hover .message {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.second:hover .mapClass {
+  transform: scaleX(-1);
+  opacity: 0;
+}
+
+.second:hover .mapText {
+  transform: scaleX(1);
+}
+
+.call {
+  margin-left: -42.5px;
+  opacity: 0;
+  transform: scaleX(-1);
+  transition-duration: 2s;
+}
+
+.mapClass {
+  transition-duration: 2s;
+}
+
+.third {
+  margin-right: 42.5px;
+}
+.third:hover .call {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.third:hover .mapClass {
+  transform: scaleX(1);
+  opacity: 0;
+}
+
+.third:hover .call {
+  transform: scaleX(1);
+}
+
+.copyText {
+  margin-left: -31.45px;
+  opacity: 0;
+  transform: scaleX(-1);
+  transition-duration: 2s;
+}
+
+.mapClass {
+  transition-duration: 2s;
+}
+
+.fourth {
+  margin-right: 31.45px;
+}
+.fourth:hover .copyText {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.fourth:hover .mapClass {
+  transform: scaleX(1);
+  opacity: 0;
+}
+
+.fourth:hover .copy {
+  transform: scaleX(-1);
+}

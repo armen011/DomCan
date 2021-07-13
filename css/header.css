@@ -57,3 +57,50 @@
   align-items: center;
   padding: 0 20px;
 }
+@media only screen and (max-width: 960px) {
+  .searchbar{
+    width: 30%;
+  }
+  .navbar {
+    width: 40%;
+  }
+  .searchcomp button {
+    width: 15%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .searchcomp{
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top:100px;
+    right: 40px;
+    border-radius: 100%;
+    overflow:hidden;
+  }
+  .searchcomp button {
+    width: 100%;
+  }
+  .searchcomp input{
+    display: none;
+  }
+  .searchcomp:hover{
+    width: 300px;
+    border-radius: 5px;
+    
+  }
+  .searchcomp:hover button{
+    width: 15%;
+  }
+  .searchcomp:hover input{
+   display: block;
+  }
+  
+  .navbar {
+    width: 50%;
+  }
+  .logo {
+    width: 50%;
+  }
+  
+}

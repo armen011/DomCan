@@ -67,7 +67,7 @@ function showInCart(div, inCart) {
     trHead.append(title, price, qnt, total)
     thead.append(trHead)
 
-    let td
+
     inCart.forEach(element => {
         tr = document.createElement('tr')
         tdTitle = document.createElement('td')
@@ -79,8 +79,9 @@ function showInCart(div, inCart) {
         input.type = 'number'
         input.value = element.count
         input.max = element.qnt
-        input.addEventListener('change', (e) => { Item.changeCount(element.id, e.target.value, element.qnt) })
+        input.addEventListener('change', e => setCount(element.id, e.target.value, element.qnt))
         tdQnt.append(input)
+
         tdTotal = document.createElement('td')
         tdTotal.innerText = element.count * element.price + '$'
         tr.append(tdTitle, tdPrice, tdQnt, tdTotal)
@@ -91,3 +92,9 @@ function showInCart(div, inCart) {
     div.append(table)
 
 }
+function setCount(id, count, max) {
+    Item.changeCount(id, count, max)
+
+
+}
+

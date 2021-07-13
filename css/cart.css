@@ -42,5 +42,13 @@
     padding-left: 20px;
 }
 
+@media only screen and (max-width: 550px) {
+  .cartForm {
+    width: 100%;
+    position: absolute;
+  }
+  
+}
+
   
   

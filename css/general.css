@@ -62,11 +62,11 @@ img {
 }
 .cover {
   width: 100%;
-  min-height: 800px;
+  min-height: 1000px;
   background-color: rgba(195, 177, 177, 0.493);
   display: flex;
   justify-content: center;
-  position: fixed;
+  position: absolute;
   top: 80px;
   padding-bottom: 30px;
 }

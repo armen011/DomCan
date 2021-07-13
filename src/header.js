@@ -53,7 +53,11 @@ function showItems(div) {
       price.innerText = "Price" + elm.price;
       let qnt = document.createElement("p");
       qnt.innerText = "Qnt` " + elm.qnt;
-      item.append(imgDiv, title, price, qnt);
+      let btn = document.createElement('button')
+      btn.innerText = 'To Cart'
+      btn.onclick = () => { Item.addToCart(elm.id) }
+      btn.classList.add('btn')
+      item.append(imgDiv, title, price, qnt, btn);
       div.append(item);
     });
   } else {

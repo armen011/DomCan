@@ -53,4 +53,19 @@ class Item {
       return false;
     }
   }
+  static addToCart(id) {
+    let Items = JSON.parse(localStorage.Items);
+    Items.forEach(element => {
+      if (element.id == id) {
+        if (element.inChart === true) {
+          element.count += 1
+        } else {
+          element.inChart = true
+        }
+      }
+      localStorage.Items = JSON.stringify(Items);
+
+    });
+
+  }
 }

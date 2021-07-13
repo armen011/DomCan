@@ -1,0 +1,18 @@
+.cartForm {
+    width: 800px;
+    min-height: 700px;
+    background-color: white;
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+  .cartForm h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+  
+  

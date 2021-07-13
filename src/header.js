@@ -32,6 +32,7 @@ const importNav = (div) => {
   const Cart = document.createElement("button");
   Cart.innerText = "Cart";
   Cart.classList.add("btn");
+  Cart.onclick = CartForm;
   div.append(SignIn, SignUp, Cart);
 };
 
@@ -63,3 +64,5 @@ function showItems(div) {
   } else {
   }
 }
+
+

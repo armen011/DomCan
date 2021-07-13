@@ -68,4 +68,9 @@ class Item {
     });
 
   }
+  static showCart() {
+    let Items = JSON.parse(localStorage.Items);
+    const res = Items.filter((elm) => { return elm.inChart })
+    return res
+  }
 }

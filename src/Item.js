@@ -61,6 +61,7 @@ class Item {
           element.count += 1
         } else {
           element.inChart = true
+          element.count = 1
         }
       }
       localStorage.Items = JSON.stringify(Items);
@@ -69,8 +70,31 @@ class Item {
 
   }
   static showCart() {
+    if (localStorage.Items) {
+      let Items = JSON.parse(localStorage.Items);
+      const res = Items.filter((elm) => { return elm.inChart })
+      return res
+    } else {
+      return []
+    }
+  }
+  static changeCount(id, count, max) {
     let Items = JSON.parse(localStorage.Items);
-    const res = Items.filter((elm) => { return elm.inChart })
-    return res
+
+    Items.forEach(element => {
+      if (element.id == id) {
+        if (count == 0) {
+          element.inChart = false
+        } else if (count < max) {
+          element.count = parseInt(count)
+        } else {
+          element.count = parseInt(max)
+
+        }
+
+      }
+      localStorage.Items = JSON.stringify(Items);
+
+    })
   }
 }

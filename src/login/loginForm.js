@@ -6,6 +6,7 @@ function SignInForm() {
       const main = document.querySelector("main");
       let cover = document.createElement("div");
       cover.classList.add("cover");
+      cover.onclick = run
       createLogForm(cover);
       main.append(cover);
     } else {
@@ -18,6 +19,7 @@ function SignInForm() {
 function createLogForm(div) {
   let registerForm = document.createElement("div");
   registerForm.classList.add("signInForm");
+  registerForm.onclick = (e) => { e.stopPropagation() }
   let h2 = document.createElement("h2");
   h2.innerText = "Sign In";
   let p = document.createElement("p");
@@ -31,7 +33,7 @@ function createLogForm(div) {
   buttonSign.onclick = loginValid;
   let closeBtn = document.createElement("div");
   closeBtn.classList.add("close");
-  closeBtn.onclick = () => location.reload();
+  closeBtn.onclick = () => run();
   registerForm.append(h2, p, inputs, buttonSign, closeBtn);
   div.append(registerForm);
 }

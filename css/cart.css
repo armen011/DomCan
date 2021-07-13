@@ -1,6 +1,6 @@
 .cartForm {
-    width: 800px;
-    min-height: 700px;
+    width: 500px;
+    height: 400px;
     background-color: white;
     margin-top: 20px;
     position: relative;
@@ -14,5 +14,33 @@
     font-size: 32px;
     text-align: center;
   }
+  .cartForm .cartMain{
+      width: 95%;
+      height: 400px;
+      overflow-y: auto;
+      padding: 30px;
+      margin-top: 10px;
+      list-style: none;
+      border:1px solid;
+  }
+  .cartForm .cartMain h3{
+     text-align: center;
+    margin-top: 50px;
+  }
+  .cartForm .cartMain table{
+      width: 100%;
+      font-size: 18px;
+  }
+  .cartForm .cartMain table tbody tr td{
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+}
+.cartForm .cartMain table tbody tr td input{
+    width: 60px;
+    height: 30px;
+    padding-left: 20px;
+}
+
   
   

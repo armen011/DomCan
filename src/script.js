@@ -1,5 +1,7 @@
 function run() {
+
   let header = document.querySelector(".header");
+  header.innerHTML = ''
   let logo = document.createElement("div");
   logo.classList.add("logo");
   importLogo(logo);
@@ -11,6 +13,7 @@ function run() {
   importNav(nav);
   header.append(logo, search, nav);
   let main = document.querySelector(".main");
+  main.innerHTML = ''
   showItems(main);
 }
 run();

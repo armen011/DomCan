@@ -2,6 +2,7 @@ function profile() {
   if (!document.querySelector(".cover")) {
     const main = document.querySelector("main");
     let cover = document.createElement("div");
+    cover.onclick = run
     cover.classList.add("cover");
     createProfile(cover);
     main.append(cover);
@@ -14,6 +15,7 @@ function profile() {
 createProfile = (div) => {
   let profileForm = document.createElement("div");
   profileForm.classList.add("profileForm");
+  profileForm.onclick = (e) => { e.stopPropagation() }
 
   //<==========Header2================>
   let h2 = document.createElement("h2");
@@ -44,7 +46,7 @@ createProfile = (div) => {
   //<==========CloseBtn================>
   let closeBtn = document.createElement("div");
   closeBtn.classList.add("close");
-  closeBtn.onclick = () => location.reload();
+  closeBtn.onclick = () => run();
 
   //<==========Appending================>
   main.append(info, addItem, headerItem, items);

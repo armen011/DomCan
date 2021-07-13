@@ -2,6 +2,7 @@ function RegisterForm() {
   if (!document.querySelector(".cover")) {
     const main = document.querySelector("main");
     let cover = document.createElement("div");
+    cover.onclick = run
     cover.classList.add("cover");
     createRegForm(cover);
     main.append(cover);
@@ -13,13 +14,14 @@ function RegisterForm() {
 }
 const createRegForm = (div) => {
   let registerForm = document.createElement("div");
+  registerForm.onclick = (e) => { e.stopPropagation() }
   registerForm.classList.add("registerForm");
   let h2 = document.createElement("h2");
   let p = document.createElement("p");
   p.id = "error";
   let closeBtn = document.createElement("div");
   closeBtn.classList.add("close");
-  closeBtn.onclick = () => location.reload();
+  closeBtn.onclick = () => run();
   h2.innerText = "Registration";
   let inputs = document.createElement("table");
   inputs.classList.add("inputs");

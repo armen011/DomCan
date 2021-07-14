@@ -71,6 +71,6 @@ img {
   display: flex;
   justify-content: center;
   position: absolute;
-  top: 80px;
+  top:0;
   padding-bottom: 30px;
 }

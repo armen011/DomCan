@@ -78,17 +78,17 @@
   margin-top: 10px;
 }
 .profileItems {
-  width: 100%;
+  width: 95%;
   height: 200px;
   margin-top: 20px;
   border-radius: 10px;
   background-color: #131a22;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   padding: 10px 60px;
   overflow-x: auto;
   overflow-y: hidden;
+  white-space: nowrap;
 }
 .itemToShow {
   width: 150px;
@@ -97,7 +97,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
+  
   margin-right: 10px;
   margin-bottom: 10px;
 }

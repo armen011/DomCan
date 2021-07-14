@@ -97,4 +97,29 @@ class Item {
 
     })
   }
+  static search(char) {
+    let res = []
+    if (char === '') {
+      return res
+    }
+    if (localStorage.Items) {
+      const items = JSON.parse(localStorage.Items);
+      const firstLetter = items.filter((elm) => elm.title[0] == char[0] || elm.title[0] == char[0].toUpperCase())
+      const others = items.filter((elm) => (elm.title.indexOf(char) > -1 || elm.title.indexOf(char.toUpperCase()) > -1) && elm.title[0] != char && elm.title[0] != char.toUpperCase())
+      res = [...firstLetter.sort(dynamicSort("title")), ...others.sort(dynamicSort("title"))]
+    }
+    function dynamicSort(property) {
+      let sortOrder = 1;
+      if (property[0] === "-") {
+        sortOrder = -1;
+        property = property.substr(1);
+      }
+      return function (a, b) {
+        let result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        return result * sortOrder;
+      }
+    }
+    return res
+  }
+
 }

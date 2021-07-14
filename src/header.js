@@ -6,6 +6,7 @@ const importSearch = (div) => {
   let searchcomp = document.createElement("div");
   searchcomp.classList.add("searchcomp");
   let input = document.createElement("input");
+  input.addEventListener('keyup', (e) => search(e))
   input.placeholder = "Write to Search";
   let btn = document.createElement("button");
   let i = document.createElement("i");
@@ -63,6 +64,71 @@ function showItems(div) {
     });
   } else {
   }
+}
+function search(e) {
+  const filter = e.target.value
+  if (!document.querySelector(".cover")) {
+    const main = document.querySelector("main");
+    let cover = document.createElement("div");
+    cover.onclick = run
+    cover.classList.add("cover");
+    const searchResult = document.createElement('div')
+    addSearchResult(searchResult)
+    searchResult.classList.add('searchResult')
+    cover.append(searchResult)
+    main.append(cover);
+  } else {
+    let cover = document.querySelector(".cover");
+    cover.innerText = "";
+    if (!document.querySelector('.searchResult')) {
+      const searchResult = document.createElement('div')
+      addSearchResult(searchResult)
+      searchResult.classList.add('searchResult')
+      cover.append(searchResult)
+    } else {
+      const searchResult = document.querySelector('.searchResult')
+      searchResult.innerHTML = ''
+      addSearchResult(searchResult)
+      cover.append(searchResult)
+    }
+  }
+  function addSearchResult(div) {
+    div.addEventListener('click', (e) => e.stopPropagation())
+    const res = Item.search(filter)
+    if (res.length > 0) {
+      const table = document.createElement('table')
+      let tr, td
+
+      res.forEach((elm) => {
+        tr = document.createElement('tr')
+        td = document.createElement('td')
+        td.innerText = elm.title
+        tr.append(td)
+        td = document.createElement('td')
+        td.innerText = elm.price + '$'
+        tr.append(td)
+        td = document.createElement('td')
+        td.innerText = elm.qnt
+        tr.append(td)
+        td = document.createElement('td')
+        let btn = document.createElement('button')
+        btn.innerText = 'To Cart'
+        btn.onclick = () => { Item.addToCart(elm.id) }
+        btn.classList.add('btn')
+        td.append(btn)
+        tr.append(td)
+        table.append(tr)
+      })
+      div.append(table)
+
+    } else {
+      const h3 = document.createElement('h3')
+      h3.innerText = 'No item was found'
+      div.append(h3)
+    }
+
+  }
+
 }
 
 

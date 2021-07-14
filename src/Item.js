@@ -104,9 +104,11 @@ class Item {
     }
     if (localStorage.Items) {
       const items = JSON.parse(localStorage.Items);
-      const firstLetter = items.filter((elm) => elm.title[0] == char[0] || elm.title[0] == char[0].toUpperCase())
-      const others = items.filter((elm) => (elm.title.indexOf(char) > -1 || elm.title.indexOf(char.toUpperCase()) > -1) && elm.title[0] != char && elm.title[0] != char.toUpperCase())
-      res = [...firstLetter.sort(dynamicSort("title")), ...others.sort(dynamicSort("title"))]
+
+      const result = items.filter((elm) => elm.title.toLowerCase().indexOf(char.toLowerCase()) > -1)
+      const firstLetter = result.filter((elm) => elm.title[0].toLowerCase() == char[0].toLowerCase())
+      const others = result.filter((elm) => elm.title[0].toLowerCase() != char[0].toLowerCase())
+      res = [...firstLetter.sort(dynamicSort('title')), ...others.sort(dynamicSort('title'))]
     }
     function dynamicSort(property) {
       let sortOrder = 1;

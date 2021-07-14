@@ -1,0 +1,21 @@
+.content{
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.itemToShowMain{
+    width: 180px;
+    height: 250px;
+    background: white;
+    display: flex;
+    padding: 10px;
+    box-shadow: 6px 4px 20px 0px #c3c3c3;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}

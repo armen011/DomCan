@@ -1,9 +1,8 @@
 @import url("register.css");
 .main {
   width: 100%;
-  height: 1200px;
-  background-color: #eaeded;
-  padding-top: 80px;
+  padding-top:160px;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
 }

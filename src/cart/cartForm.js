@@ -8,7 +8,6 @@ function CartForm() {
         main.append(cover);
     } else {
         let cover = document.querySelector(".cover");
-
         cover.innerText = "";
         createCart(cover);
     }
@@ -79,7 +78,7 @@ function showInCart(div, inCart) {
         input.type = 'number'
         input.value = element.count
         input.max = element.qnt
-        input.addEventListener('change', e => setCount(element.id, e.target.value, element.qnt))
+        input.addEventListener('keyup', e => setCount(element.id, e.target.value, element.qnt))
         tdQnt.append(input)
 
         tdTotal = document.createElement('td')
@@ -94,7 +93,6 @@ function showInCart(div, inCart) {
 }
 function setCount(id, count, max) {
     Item.changeCount(id, count, max)
-
-
+    CartForm()
 }
 

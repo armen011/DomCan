@@ -40,16 +40,18 @@ const importNav = (div) => {
 function showItems(div) {
   if (Item.getItems()) {
     let items = Item.getItems();
+    const container = document.createElement('div')
+    container.classList.add('content')
     items.map((elm) => {
       let item = document.createElement("div");
-      item.className = "itemToShow";
+      item.className = "itemToShowMain";
       let imgDiv = document.createElement("div");
       imgDiv.className = "imgDiv";
       let img = document.createElement("img");
       img.src = elm.img;
       imgDiv.append(img);
       let title = document.createElement("p");
-      title.innerText = "Title` " + elm.title;
+      title.innerText = elm.title;
       title.className = "showTitle";
       let price = document.createElement("p");
       price.innerText = "Price" + elm.price;
@@ -60,8 +62,9 @@ function showItems(div) {
       btn.onclick = () => { Item.addToCart(elm.id) }
       btn.classList.add('btn')
       item.append(imgDiv, title, price, qnt, btn);
-      div.append(item);
+      container.append(item);
     });
+    div.append(container)
   } else {
   }
 }

@@ -3,7 +3,6 @@
   height: 80px;
   background: #131921;
   display: flex;
-  position: fixed;
   z-index: 1;
 }
 .logo {
@@ -69,6 +68,7 @@
   margin-top: 40px;
   text-align: center;
   font-size: 25px;
+  overflow-y: auto;
 }
 
 
@@ -80,35 +80,23 @@
   align-items: center;
   padding: 0 20px;
 }
-.container {
-  display: none;
-  cursor: pointer;
-  padding-top: 20px;
-}
-
-.bar1, .bar2, .bar3 {
-  width: 35px;
-  height: 5px;
-  background-color:#e4a655 ;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
 .sideMenu{
   width:100%;
   height: 40px;
-  display: none;
   transition: 1s;
-  justify-content: space-around;
-  padding-top: 5px;
-  position: absolute;
-  top:80px;
-  right: 0;
-}
-.container:hover  .sideMenu{
   display: flex;
-  
+  justify-content: flex-end;
+  z-index: 1;
+  position: fixed;
+  bottom:0px;
+  right: 5px;
+  display: none;
 }
+.sideMenu button{
+  margin-left: 10px;
+  box-shadow: 3px 3px 10px 2px;
+}
+
 
 
 
@@ -137,8 +125,8 @@
     width: 40px;
     height: 40px;
     position: fixed;
-    top:160px;
-    right: 40px;
+    bottom:10px;
+    left: 5px;
     border-radius: 100%;
     overflow:hidden;
   }
@@ -159,7 +147,9 @@
   .searchcomp:hover input{
    display: block;
   }
-  
+  .searchResult{
+    width: 100%;
+  }
   .navbar {
     width: 50%;
   }
@@ -179,6 +169,9 @@
   }
   .navbar {
    display: none;
+  }
+  .sideMenu{
+    display: flex;
   }
   .container{
     display: inline-block;

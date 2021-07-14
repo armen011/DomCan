@@ -79,11 +79,13 @@ class Item {
     }
   }
   static changeCount(id, count, max) {
+    count = parseInt(count)
+    max = parseInt(max)
     let Items = JSON.parse(localStorage.Items);
 
     Items.forEach(element => {
       if (element.id == id) {
-        if (count === 0) {
+        if (count == 0) {
           element.inChart = false
         } else if (count < max) {
           element.count = parseInt(count)

@@ -78,7 +78,7 @@ function showInCart(div, inCart) {
         input.type = 'number'
         input.value = element.count
         input.max = element.qnt
-        input.addEventListener('keyup', e => setCount(element.id, e.target.value, element.qnt))
+        input.addEventListener('change', e => setCount(element.id, e.target.value, element.qnt))
         tdQnt.append(input)
 
         tdTotal = document.createElement('td')
